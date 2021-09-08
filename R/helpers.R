@@ -5,7 +5,7 @@
 #' @return Returns a {Logical scalar} with value \code{TRUE} if the object is a
 #'  scalar
 #'
-#' @keyword Internal
+#' @keywords Internal
 #'
 #' x = 1:10
 #' stop_if_not_scalar(x)

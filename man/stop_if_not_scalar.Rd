@@ -16,3 +16,8 @@ Returns a {Logical scalar} with value \code{TRUE} if the object is a
 \description{
 Test if an object is a scalar
 }
+\keyword{1:10}
+\keyword{=}
+\keyword{Internal}
+\keyword{stop_if_not_scalar(x)}
+\keyword{x}
