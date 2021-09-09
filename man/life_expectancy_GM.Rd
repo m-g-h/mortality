@@ -32,6 +32,14 @@ with the upper incomplete gamma function
 }
 which is implemented in \code{\link{upper_inc_gamma}}.
 }
+\section{Sources}{
+
+
+Castellares et al. (2020) - \emph{On closed-form expressions to Gompertz–Makeham
+life expectancy}. Theoretical Population Biology 134 (August 2020): 53-60.
+\href{https://doi.org/10.1016/j.tpb.2020.04.005}{https://doi.org/10.1016/j.tpb.2020.04.005}
+}
+
 \examples{
 
 # You can use a single age:

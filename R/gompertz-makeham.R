@@ -101,6 +101,12 @@ survival_function_GM = function(t, A, R, alpha){
 #'
 #' @seealso \code{\link{upper_inc_gamma}}
 #'
+#' @section Sources:
+#'
+#' Castellares et al. (2020) - \emph{On closed-form expressions to Gompertz–Makeham
+#' life expectancy}. Theoretical Population Biology 134 (August 2020): 53-60.
+#' \href{https://doi.org/10.1016/j.tpb.2020.04.005}{https://doi.org/10.1016/j.tpb.2020.04.005}
+#'
 #' @examples
 #'
 #' # You can use a single age:
@@ -127,6 +133,7 @@ life_expectancy_GM = function(t, A, R, alpha){
   gamma_u = -(A/alpha)
   gamma_x = (R * exp(alpha*t)) / alpha
 
+  ## Calculate the result
   (1/alpha) * exp(gamma_u) * (gamma_x^(A/alpha)) * upper_inc_gamma(gamma_u, gamma_x)
 
 }
