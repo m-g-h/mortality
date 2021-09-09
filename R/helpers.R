@@ -2,8 +2,7 @@
 #'
 #' @param x Object to test
 #'
-#' @return Returns a {Logical scalar} with value \code{TRUE} if the object is a
-#'  scalar
+#' @return Displays an error message informing that x should be a scalar.
 #'
 #' @keywords Internal
 #'
@@ -67,4 +66,26 @@ upper_inc_gamma = function(u, x){
 
   # Compute the output
   vecfun(u, x)
+}
+
+
+#' Test if an package is installed and fail else
+#'
+#' @param package \code{string scalar} Giving the package to test for
+#'
+#' @return Displays an error message indicating that the package should be installed
+#'
+#' @keywords Internal
+#'
+stop_if_package_is_missing = function(package){
+  # Check if package is installed
+  package_installed = requireNamespace(package, quietly = TRUE)
+
+  # Stop and display error message
+  if (!package_installed){
+    stop("Package ", package,
+         ' is required for this function. Install it e.g. via `install.packages("',
+         package,
+         '")`.')
+  }
 }

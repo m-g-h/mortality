@@ -30,3 +30,11 @@ test_that("upper_inc_gamma fails if inputs are not vectors",{
   expect_error(upper_inc_gamma(1:2, 2),
                regexp = "Argument `u` is a parameter that has to be a scalar but is of length 2.")
 })
+
+
+# stop_if_package_is_missing ----------------------------------------------
+
+test_that("stop_if_package_is_missing works",{
+  expect_error(stop_if_package_is_missing("thereisnopackagewiththisname"),
+               regexp = 'Package thereisnopackagewiththisname is required for this function')
+})

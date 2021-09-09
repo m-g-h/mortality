@@ -10,8 +10,7 @@ stop_if_not_scalar(x)
 \item{x}{Object to test}
 }
 \value{
-Returns a {Logical scalar} with value \code{TRUE} if the object is a
- scalar
+Displays an error message informing that x should be a scalar.
 }
 \description{
 Test if an object is a scalar
