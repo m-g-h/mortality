@@ -4,16 +4,16 @@
 \alias{survival_function_GM}
 \title{Calculate Gompertz-Makeham Force of Motion}
 \usage{
-survival_function_GM(A, R, alpha, t)
+survival_function_GM(t, A, R, alpha)
 }
 \arguments{
+\item{t}{\code{numeric scalar or vector} corresponding to the age(s) \mjseqn{t}}
+
 \item{A}{\code{numeric scalar} corresponding to the \mjseqn{A} parameter}
 
 \item{R}{\code{numeric scalar} corresponding to the \mjseqn{R} parameter}
 
 \item{alpha}{\code{numeric scalar} corresponding to the \mjseqn{\alpha} parameter}
-
-\item{t}{\code{numeric scalar or vector} corresponding to the age(s) \mjseqn{t}}
 }
 \value{
 Returns a \code{numeric scalar} giving the Gompertz-Makeham force
@@ -26,15 +26,15 @@ Calculates \mjseqn{S(t) = -At - \frac{R}{\alpha} (\exp(\alpha t) - 1)  }
 \examples{
 
 # You can use a single age:
-survival_function_GM(A = 0.005,
+survival_function_GM(t = 10
+                     A = 0.005,
                      R = 0.00005,
-                     alpha = 0.0093,
-                     t = 10)
+                     alpha = 0.0093)
 
 # Or a vector of ages:
-survival_function_GM(A = 0.005,
+survival_function_GM(t = 0:100
+                     A = 0.005,
                      R = 0.00005,
-                     alpha = 0.0093,
-                     t = 0:100)
+                     alpha = 0.0093)
 
 }

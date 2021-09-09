@@ -4,16 +4,16 @@
 \alias{force_of_mortality_GM}
 \title{Calculate Gompertz-Makeham Force of Motion}
 \usage{
-force_of_mortality_GM(A, R, alpha, t)
+force_of_mortality_GM(t, A, R, alpha)
 }
 \arguments{
+\item{t}{\code{numeric scalar or vector} corresponding to the age(s) \mjseqn{t}}
+
 \item{A}{\code{numeric scalar} corresponding to the \mjseqn{A} parameter}
 
 \item{R}{\code{numeric scalar} corresponding to the \mjseqn{R} parameter}
 
 \item{alpha}{\code{numeric scalar} corresponding to the \mjseqn{\alpha} parameter}
-
-\item{t}{\code{numeric scalar or vector} corresponding to the age(s) \mjseqn{t}}
 }
 \value{
 Returns a \code{numeric scalar} giving the Gompertz-Makeham force
@@ -26,15 +26,16 @@ Calculates \mjseqn{\mu(t) = A + R e^{\alpha t}}
 \examples{
 
 # You can use a single age:
-force_of_mortality_GM(A = 0.005,
+force_of_mortality_GM(t = 10,
+                      A = 0.005,
                       R = 0.00005,
-                      alpha = 0.0093,
-                      t = 10)
+                      alpha = 0.0093)
 
 # Or a vector of ages:
-force_of_mortality_GM(A = 0.005,
+force_of_mortality_GM(t = 0:100,
+                      A = 0.005,
                       R = 0.00005,
-                      alpha = 0.0093,
-                      t = 0:100)
+                      alpha = 0.0093
+                      )
 
 }

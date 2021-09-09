@@ -16,18 +16,19 @@
 #' @examples
 #'
 #' # You can use a single age:
-#' force_of_mortality_GM(A = 0.005,
+#' force_of_mortality_GM(t = 10,
+#'                       A = 0.005,
 #'                       R = 0.00005,
-#'                       alpha = 0.0093,
-#'                       t = 10)
+#'                       alpha = 0.0093)
 #'
 #' # Or a vector of ages:
-#' force_of_mortality_GM(A = 0.005,
+#' force_of_mortality_GM(t = 0:100,
+#'                       A = 0.005,
 #'                       R = 0.00005,
-#'                       alpha = 0.0093,
-#'                       t = 0:100)
+#'                       alpha = 0.0093
+#'                       )
 #'
-force_of_mortality_GM = function(A, R, alpha, t){
+force_of_mortality_GM = function(t, A, R, alpha){
 
   # Fail gracefully if the parameters are not scalars
   stop_if_not_scalar(A)
@@ -35,7 +36,7 @@ force_of_mortality_GM = function(A, R, alpha, t){
   stop_if_not_scalar(alpha)
 
   # Calculate the force of motion
-  A + R * exp(alpha * t)
+  A + R * exp(alpha*t)
 
 }
 
@@ -50,21 +51,22 @@ force_of_mortality_GM = function(A, R, alpha, t){
 #' of mortality \mjseqn{\mu(t)}
 #' @export
 #'
+#'
 #' @examples
 #'
 #' # You can use a single age:
-#' survival_function_GM(A = 0.005,
+#' survival_function_GM(t = 10
+#'                      A = 0.005,
 #'                      R = 0.00005,
-#'                      alpha = 0.0093,
-#'                      t = 10)
+#'                      alpha = 0.0093)
 #'
 #' # Or a vector of ages:
-#' survival_function_GM(A = 0.005,
+#' survival_function_GM(t = 0:100
+#'                      A = 0.005,
 #'                      R = 0.00005,
-#'                      alpha = 0.0093,
-#'                      t = 0:100)
+#'                      alpha = 0.0093)
 #'
-survival_function_GM = function(A, R, alpha, t){
+survival_function_GM = function(t, A, R, alpha){
 
   # Fail gracefully if the parameters are not scalars
   stop_if_not_scalar(A)
