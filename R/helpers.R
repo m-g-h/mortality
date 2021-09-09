@@ -36,7 +36,7 @@ stop_if_not_scalar <- function(x){
 #' using numerical integration via \code{\link{integrate}}.
 #'
 #' @param u \code{Numeric scalar} corresponding to \mjseqn{u}
-#' @param x \code{Numeric scalar} corresponding to \mjseqn{x}
+#' @param x \code{Numeric scalar or vector} corresponding to \mjseqn{x}
 #'
 #' @return Returns a \code{numeric scalar}
 #' @export
@@ -51,11 +51,20 @@ upper_inc_gamma = function(u, x){
 
   # Fail gracefully if arguments are not scalars
   stop_if_not_scalar(u)
-  stop_if_not_scalar(x)
 
-  # Perform the integration using an anonymous function
-  integrate(f = function(t) t^(u-1) * exp(-t),
-            lower = x,
-            upper = Inf
-            )$value
+  # Non-vectorised integration function
+  intfun = function(u, x){
+    # Perform the integration using an anonymous function
+    integrate(f = function(t) t^(u-1) * exp(-t),
+              lower = x,
+              upper = Inf
+    )$value
+  }
+
+  # Vectorised function
+  vecfun = Vectorize(intfun,
+            vectorize.args = c("x"))
+
+  # Compute the output
+  vecfun(u, x)
 }

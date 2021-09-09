@@ -9,7 +9,7 @@ upper_inc_gamma(u, x)
 \arguments{
 \item{u}{\code{Numeric scalar} corresponding to \mjseqn{u}}
 
-\item{x}{\code{Numeric scalar} corresponding to \mjseqn{x}}
+\item{x}{\code{Numeric scalar or vector} corresponding to \mjseqn{x}}
 }
 \value{
 Returns a \code{numeric scalar}

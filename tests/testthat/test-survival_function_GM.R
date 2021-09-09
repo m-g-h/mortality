@@ -1,22 +1,22 @@
-test_that("GM_force_of_mortality works with scalar age", {
-  expect_equal(survival_function_GM(A = 0.005,
-                                     R = 0.00005,
-                                     alpha = 0.0093,
-                                     t = 10),
-               0.95073112242793489)
+test_that("survival_function_GM works with scalar age", {
+  expect_equal(survival_function_GM(A = 0.00033,
+                                     R = 0.00014,
+                                     alpha = 0.11521,
+                                     t = 0),
+               1)
 
 })
 
-test_that("GM_force_of_mortality works with vector age", {
-  expect_equal(survival_function_GM(A = 0.005,
-                                     R = 0.00005,
-                                     alpha = 0.0093,
+test_that("survival_function_GM works with vector age", {
+  expect_equal(survival_function_GM(A = 0.00033,
+                                     R = 0.00014,
+                                     alpha = 0.11521,
                                      t = 0:100),
-               readRDS(file = "test-gompertz-makeham_surv_vector"))
+               readRDS(file = "test-survival_function_GM_vector"))
 
 })
 
-test_that("GM_force_of_mortality fails for vector parameters",{
+test_that("survival_function_GM fails for vector parameters",{
 
   expect_error(survival_function_GM(A = 1:10,
                                      R = 1,

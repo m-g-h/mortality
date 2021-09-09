@@ -26,16 +26,16 @@ Calculates \mjseqn{\mu(t) = A + R e^{\alpha t}}
 \examples{
 
 # You can use a single age:
-force_of_mortality_GM(t = 10,
-                      A = 0.005,
-                      R = 0.00005,
-                      alpha = 0.0093)
+force_of_mortality_GM(t = 0,
+                      A = 0.00033,
+                      R = 0.00014,
+                      alpha = 0.11521)
 
 # Or a vector of ages:
 force_of_mortality_GM(t = 0:100,
-                      A = 0.005,
-                      R = 0.00005,
-                      alpha = 0.0093
+                      A = 0.00033,
+                      R = 0.00014,
+                      alpha = 0.11521
                       )
 
 }

@@ -1,22 +1,22 @@
-test_that("GM_force_of_mortality works with scalar age", {
-  expect_equal(force_of_mortality_GM(A = 0.005,
-                                     R = 0.00005,
-                                     alpha = 0.0093,
-                                     t = 10),
-               0.0050548730867634043)
+test_that("force_of_mortality_GM works with scalar age", {
+  expect_equal(force_of_mortality_GM(A = 0.00033,
+                                     R = 0.00014,
+                                     alpha = 0.11521,
+                                     t = 0),
+               0.00046999999999999999)
 
 })
 
-test_that("GM_force_of_mortality works with vector age", {
-  expect_equal(force_of_mortality_GM(A = 0.005,
-                                     R = 0.00005,
-                                     alpha = 0.0093,
+test_that("force_of_mortality_GM works with vector age", {
+  expect_equal(force_of_mortality_GM(A = 0.00033,
+                                     R = 0.00014,
+                                     alpha = 0.11521,
                                      t = 0:100),
-               readRDS(file = "test-gompertz-makeham_fom_vector"))
+               readRDS(file = "test-force_of_mortality_GM_vector"))
 
 })
 
-test_that("GM_force_of_mortality fails for vector parameters",{
+test_that("force_of_mortality_GM fails for vector parameters",{
 
   expect_error(force_of_mortality_GM(A = 1:10,
                                      R = 1,

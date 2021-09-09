@@ -29,8 +29,4 @@ test_that("upper_inc_gamma fails if inputs are not vectors",{
   # Check argment 1
   expect_error(upper_inc_gamma(1:2, 2),
                regexp = "Argument `u` is a parameter that has to be a scalar but is of length 2.")
-
-  # Check argument 2
-  expect_error(upper_inc_gamma(1, 1:2),
-               regexp = "Argument `x` is a parameter that has to be a scalar but is of length 2.")
 })

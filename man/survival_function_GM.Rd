@@ -16,8 +16,8 @@ survival_function_GM(t, A, R, alpha)
 \item{alpha}{\code{numeric scalar} corresponding to the \mjseqn{\alpha} parameter}
 }
 \value{
-Returns a \code{numeric scalar} giving the Gompertz-Makeham force
-of mortality \mjseqn{\mu(t)}
+Returns a \code{numeric scalar} giving the Gompertz-Makeham survival
+probability \mjseqn{S(t)}
 }
 \description{
 \loadmathjax{}
@@ -26,15 +26,15 @@ Calculates \mjseqn{S(t) = -At - \frac{R}{\alpha} (\exp(\alpha t) - 1)  }
 \examples{
 
 # You can use a single age:
-survival_function_GM(t = 10,
-                     A = 0.005,
-                     R = 0.00005,
-                     alpha = 0.0093)
+survival_function_GM(t = 0,
+                     A = 0.00033,
+                     R = 0.00014,
+                     alpha = 0.11521)
 
 # Or a vector of ages:
 survival_function_GM(t = 0:100,
-                     A = 0.005,
-                     R = 0.00005,
-                     alpha = 0.0093)
+                     A = 0.00033,
+                     R = 0.00014,
+                     alpha = 0.11521)
 
 }
