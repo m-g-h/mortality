@@ -6,3 +6,8 @@
 ## usethis namespace: start
 ## usethis namespace: end
 NULL
+
+globalVariables(c("Force of Mortality",
+                  "Survival Probability",
+                  "Life Expectancy",
+                  "a"))
