@@ -55,13 +55,13 @@ force_of_mortality_GM = function(t, A, R, alpha){
 #' @examples
 #'
 #' # You can use a single age:
-#' survival_function_GM(t = 10
+#' survival_function_GM(t = 10,
 #'                      A = 0.005,
 #'                      R = 0.00005,
 #'                      alpha = 0.0093)
 #'
 #' # Or a vector of ages:
-#' survival_function_GM(t = 0:100
+#' survival_function_GM(t = 0:100,
 #'                      A = 0.005,
 #'                      R = 0.00005,
 #'                      alpha = 0.0093)
@@ -74,10 +74,9 @@ survival_function_GM = function(t, A, R, alpha){
   stop_if_not_scalar(alpha)
 
   # Calculate the survival probability
-  exp(-(A*t) - (R/alpha) * (exp(alpha*t) - 1) )
+  exp(-(A*t) - ((R/alpha) * (exp(alpha*t) - 1) ) )
 
 }
-
 
 
 

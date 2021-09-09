@@ -25,3 +25,37 @@ stop_if_not_scalar <- function(x){
   }
 
 }
+
+#' Upper incomplete gamma distribution
+#'
+#' @description
+#' \loadmathjax{}
+#' Calculates
+#' \mjsdeqn{\int_x^\infty t^{u-1} \exp(-t) dt}
+#'
+#' using numerical integration via \code{\link{integrate}}.
+#'
+#' @param u \code{Numeric scalar} corresponding to \mjseqn{u}
+#' @param x \code{Numeric scalar} corresponding to \mjseqn{x}
+#'
+#' @return Returns a \code{numeric scalar}
+#' @export
+#'
+#' @importFrom stats integrate
+#'
+#' @examples
+#'
+#' upper_inc_gamma(-0.005, 2)
+#'
+upper_inc_gamma = function(u, x){
+
+  # Fail gracefully if arguments are not scalars
+  stop_if_not_scalar(u)
+  stop_if_not_scalar(x)
+
+  # Perform the integration using an anonymous function
+  integrate(f = function(t) t^(u-1) * exp(-t),
+            lower = x,
+            upper = Inf
+            )$value
+}

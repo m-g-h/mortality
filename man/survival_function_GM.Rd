@@ -26,13 +26,13 @@ Calculates \mjseqn{S(t) = -At - \frac{R}{\alpha} (\exp(\alpha t) - 1)  }
 \examples{
 
 # You can use a single age:
-survival_function_GM(t = 10
+survival_function_GM(t = 10,
                      A = 0.005,
                      R = 0.00005,
                      alpha = 0.0093)
 
 # Or a vector of ages:
-survival_function_GM(t = 0:100
+survival_function_GM(t = 0:100,
                      A = 0.005,
                      R = 0.00005,
                      alpha = 0.0093)
